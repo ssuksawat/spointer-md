@@ -1,0 +1,134 @@
+<div id="mainContainer" layout="column">
+
+  <md-toolbar id="topToolbar">
+    <div class="md-toolbar-tools">
+      <h2>POIN<span class="glyphicon glyphicon-arrow-up">.is</span></h2>
+      <span flex></span>
+      <md-icon class="glyphicon glyphicon-user"></md-icon>
+      <h2>1</h2>
+    </div>
+  </md-toolbar>
+
+  <div layout="row" flex>
+
+    <md-content flex layout="column" id="content" style="height: 91vh;">
+      <div flex style="margin: 20px 20px 20px 20px;">
+
+        <md-grid-list
+          md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+          md-row-height-gt-md="1:1" md-row-height="2:2"
+          md-gutter="12px" md-gutter-gt-sm="8px" >
+
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>1</h1>
+            <md-grid-tile-footer>
+              <h3>You</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>1/2</h1>
+            <md-grid-tile-footer>
+              <h3>Person 1</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>3</h1>
+            <md-grid-tile-footer>
+              <h3>Person 3</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>3</h1>
+            <md-grid-tile-footer>
+              <h3>Person 4</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>2</h1>
+            <md-grid-tile-footer>
+              <h3>Person 5</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>1</h1>
+            <md-grid-tile-footer>
+              <h3>Person 6</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+          <md-grid-tile class="md-whiteframe-z2">
+            <h1>1</h1>
+            <md-grid-tile-footer>
+              <h3>Person 7</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+
+        </md-grid-list>
+
+      </div>
+
+      <div layout="row" style="margin-bottom: 5px; margin-left: 10px;">
+        <md-button class="md-fab md-primary" aria-label="Select story point">
+          <md-tooltip>Story Point</md-tooltip>
+          <md-icon md-svg-src="./bower_components/material-design-icons/communication/svg/design/ic_dialpad_24px.svg"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-primary" aria-label="Cancel point">
+          <md-tooltip>Cancel Point</md-tooltip>
+          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_undo_24px.svg"></md-icon>
+        </md-button>
+        <span flex></span>
+        <md-button class="md-fab md-warn" aria-label="Clear All" style="margin-right: 20px;">
+          <md-tooltip>Clear All</md-tooltip>
+          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_clear_24px.svg"></md-icon>
+        </md-button>
+      </div>
+
+    </md-content>
+
+    <md-sidenav layout="column" md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z3" md-component-id="right" id="chatBox">
+        <md-content flex layout-padding>
+          <md-list-item class="md-2-line">
+            <div class="md-list-item-text">
+              <h3>Person1:</h3>
+              <h4>hello world</h4>
+              <br/>
+
+              <h3>Person2:</h3>
+              <h4>hello world</h4>
+              <br/>
+
+              <h3>Person3:</h3>
+              <h4>hello world</h4>
+              <h4>hello world 1</h4>
+              <h4>hello world 2</h4>
+              <br/>
+
+              <h3>Person3:</h3>
+              <h4>hello world</h4>
+              <br/>
+
+              <h3>You:</h3>
+              <h4>hello world</h4>
+              <br/>
+
+              <h3>Person3:</h3>
+              <h4>hello world</h4>
+              <h4>hello world 1</h4>
+              <h4>hello world 2</h4>
+              <br/>
+
+            </div>
+          </md-list-item>
+        </md-content>
+
+      <div layout="row">
+        <md-input-container flex style="padding: 10px 10px 10px 10px;">
+          <label>Say something...</label>
+          <input ng-model="message"/>
+        </md-input-container>
+      </div>
+
+    </md-sidenav>
+
+  </div>
+
+</div>
