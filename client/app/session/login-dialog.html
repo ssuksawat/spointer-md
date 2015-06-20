@@ -1,0 +1,37 @@
+<md-dialog aria-label="Start/join a session">
+  <form>
+    <md-dialog-content layout="column">
+      <md-subheader class="md-primary">Start or join a story-pointing session...</md-subheader>
+      <h4>To begin your team's story-pointing session, click the button below to grab a room! <br/></h4>
+      <div layout="row">
+        <span flex></span>
+        <md-button flex="50" class="md-raised md-whiteframe-z2" ng-click="close()">
+          <md-icon md-svg-src="./bower_components/material-design-icons/action/svg/design/ic_room_24px.svg"></md-icon>
+          Create a Room
+        </md-button>
+        <span flex></span>
+      </div>
+      <br/>
+      <h4>...Or you can join a room by providing a Room # and Your Name <br/></h4>
+
+      <div layout="row">
+        <span flex></span>
+        <form name="joinForm">
+          <md-input-container>
+            <label>Room #</label>
+            <input type="text"/>
+          </md-input-container>
+          <md-input-container>
+            <label>Your Name</label>
+            <input type="text"/>
+          </md-input-container>
+        </form>
+        <md-button>
+          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_forward_24px.svg"></md-icon>
+        </md-button>
+        <span flex></span>
+      </div>
+
+    </md-dialog-content>
+  </form>
+</md-dialog>
