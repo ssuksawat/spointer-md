@@ -14,6 +14,7 @@ var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
+require('./components/socket/index')(server);
 
 // Start server
 server.listen(config.port, config.ip, function () {
@@ -21,4 +22,4 @@ server.listen(config.port, config.ip, function () {
 });
 
 // Expose app
-exports = module.exports = app;
+var exports = module.exports = app;

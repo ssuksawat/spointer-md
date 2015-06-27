@@ -9,16 +9,52 @@
       <div ng-include="'app/vote-display/vote-display.html'" flex id="voteContainer"></div>
 
       <div layout="row" style="margin-bottom: 5px; margin-left: 10px;">
-        <md-button class="md-fab md-primary" aria-label="Select story point">
-          <md-tooltip>Story Point</md-tooltip>
-          <md-icon md-svg-src="./bower_components/material-design-icons/communication/svg/design/ic_dialpad_24px.svg"></md-icon>
-        </md-button>
-        <md-button class="md-fab md-primary" aria-label="Cancel point">
-          <md-tooltip>Cancel Point</md-tooltip>
-          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_undo_24px.svg"></md-icon>
-        </md-button>
+        <md-fab-speed-dial direction="up" class="md-fling">
+          <md-fab-trigger>
+            <md-button class="md-fab" aria-label="Select point...">
+              <md-tooltip>Select Point</md-tooltip>
+              <md-icon md-svg-src="./bower_components/material-design-icons/communication/svg/production/ic_dialpad_24px.svg"></md-icon>
+            </md-button>
+          </md-fab-trigger>
+          <md-fab-actions>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              0
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              1
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              2
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              3
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              5
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              8
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              13
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              20
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              100
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+              &infin;
+            </md-button>
+          </md-fab-actions>
+        </md-fab-speed-dial>
+        <!--<md-button class="md-fab md-primary" aria-label="Cancel point">-->
+          <!--<md-tooltip>Cancel Point</md-tooltip>-->
+          <!--<md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_undo_24px.svg"></md-icon>-->
+        <!--</md-button>-->
         <span flex></span>
-        <md-button class="md-fab md-warn" aria-label="Clear All" style="margin-right: 20px;">
+        <md-button class="" aria-label="Clear All" style="margin-right: 20px;">
           <md-tooltip>Clear All</md-tooltip>
           <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_clear_24px.svg"></md-icon>
         </md-button>

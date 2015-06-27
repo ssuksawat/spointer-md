@@ -2,11 +2,11 @@
   <div class="md-toolbar-tools">
 
     <h2>POIN<span class="glyphicon glyphicon-arrow-up"></span>is</h2>
-    <!--<md-button>POIN<span class="glyphicon glyphicon-arrow-up"></span>is</md-button>-->
 
     <span flex></span>
 
-    <md-button class="md-raised md-accent" ng-click="vm.showLoginDialog($event)">Join Session</md-button>
+    <md-button class="md-accent" ng-click="vm.start($event)" ng-if="!vm.username">Start</md-button>
+    <md-button class="md-accent" ng-click="vm.exit()" ng-if="vm.username">Exit</md-button>
 
     <!-- Online status -->
     <!--<md-icon class="glyphicon glyphicon-user"></md-icon>-->

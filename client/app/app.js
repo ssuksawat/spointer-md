@@ -16,6 +16,11 @@
         });
 
       $locationProvider.html5Mode(true);
+    })
+    .config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+        .primaryPalette('light-blue')
+        .accentPalette('grey');
     });
 
 }());

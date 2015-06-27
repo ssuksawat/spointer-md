@@ -1,37 +1,33 @@
 <md-dialog aria-label="Start/join a session">
   <form>
     <md-dialog-content layout="column">
-      <md-subheader class="md-primary">Start or join a story-pointing session...</md-subheader>
-      <h4>To begin your team's story-pointing session, click the button below to grab a room! <br/></h4>
-      <div layout="row">
-        <span flex></span>
-        <md-button flex="50" class="md-raised md-whiteframe-z2" ng-click="close()">
-          <md-icon md-svg-src="./bower_components/material-design-icons/action/svg/design/ic_room_24px.svg"></md-icon>
-          Create a Room
-        </md-button>
-        <span flex></span>
-      </div>
-      <br/>
-      <h4>...Or you can join a room by providing a Room # and Your Name <br/></h4>
+      <md-subheader class="md-primary">Start your story-pointing session</md-subheader>
+      <md-input-container style="padding: 10px 20px 10px 20px;">
+        <label>Enter your name <small>(required)</small></label>
+        <input type="text" ng-model="name"/>
+      </md-input-container>
 
-      <div layout="row">
+      <div layout="column" style="padding: 20px 20px 0px 20px;">
+          <h5>You can <strong>create</strong> a room by pressing the button below...</h5>
+          <span flex />
+          <md-button flex="50" class="md-primary md-raised md-whiteframe-z2" ng-disabled="!name" ng-click="create(name)" style="margin: 20px 0 20px 0;">
+            Create
+          </md-button>
+          <span flex />
         <span flex></span>
-        <form name="joinForm">
-          <md-input-container>
-            <label>Room #</label>
-            <input type="text"/>
-          </md-input-container>
-          <md-input-container>
-            <label>Your Name</label>
-            <input type="text"/>
-          </md-input-container>
-        </form>
-        <md-button>
-          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_forward_24px.svg"></md-icon>
-        </md-button>
-        <span flex></span>
+          <h5>Or you can <strong>join</strong> an on-going session by entering the room #</h5>
+          <div layout="row">
+            <md-input-container flex>
+              <label>Enter room number</label>
+              <input type="text" ng-model="room"/>
+            </md-input-container>
+            <md-button class="md-fab md-mini md-primary" ng-disabled="!name && !room" ng-click="join(name, room)">
+              <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_forward_24px.svg"></md-icon>
+            </md-button>
+          </div>
       </div>
 
     </md-dialog-content>
+
   </form>
 </md-dialog>

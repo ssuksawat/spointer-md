@@ -3,22 +3,43 @@
   'use strict';
 
   angular.module('spointerMdApp')
-    .controller('MainCtrl', function ($mdDialog) {
+    .controller('MainCtrl', function ($mdDialog, Session, eventHandler) {
 
       var vm = this;
 
-      vm.showLoginDialog = function (ev) {
+      vm.start = start;
+      vm.exit = exit;
+
+      init();
+
+      /* ----- PUBLIC ----- */
+
+      function start(ev) {
+        eventHandler.connect();
         $mdDialog.show({
           controller: 'SessionCtrl',
           templateUrl: 'app/session/login-dialog.html',
           targetEvent: ev
         })
-          .then(function(answer) {
-            vm.alert = 'You said the information was "' + answer + '".';
-          }, function() {
-            $scope.alert = 'You cancelled the dialog.';
+        .then(function(info) {
+            console.log('current room info: ', info);
+            vm.username = info.name;
+            vm.roomNumber = info.room;
           });
-      };
+      }
+
+      function exit() {
+        eventHandler.disconnect();
+        Session.clear();
+        delete vm.username;
+        delete vm.roomNumber;
+      }
+
+      /* ----- PRIVATE ----- */
+
+      function init() {
+        //eventHandler.connect();
+      }
 
     });
 
