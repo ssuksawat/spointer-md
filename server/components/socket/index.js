@@ -10,9 +10,9 @@ module.exports = function(server) {
 
     client.on('createRoom', function(name) {
       //get unique 6-digit room number
-      var rand = Math.floor(Math.random() * 900000) + 100000;
+      var rand = Math.floor(Math.random() * 900) + 100;
       while(roomList[rand]) {
-        rand = Math.floor(Math.random() * 900000) + 100000;
+        rand = Math.floor(Math.random() * 900) + 100;
       }
 
       //update roomList and clientList
@@ -45,7 +45,22 @@ module.exports = function(server) {
         }
         //remove user info
         delete clientList[client.id];
+
+        client.broadcast.to(info.room).emit('userDisconnect', {name: info.name, room: roomList[info.room]});
       }
     });
+
+    client.on('sendChat', function(message) {
+      var info = clientList[client.id];
+
+      io.to(info.room).emit('chatReceived', {name: info.name, message: message});
+    });
+
+    client.on('sendVote', function(vote) {
+      var info = clientList[client.id];
+
+      client.broadcast.to(info.room).emit('voteReceived', {name: info.name, vote: vote});
+    });
+
   });
 };

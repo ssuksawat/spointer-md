@@ -1,0 +1,21 @@
+(function(){
+
+  'use strict';
+
+  angular.module('spointerMdApp').factory('chatService', function(socketHandler) {
+
+    var service = {
+      sendMessage: sendMessage
+    };
+
+    return service;
+
+    /* ----- PUBLIC ----- */
+
+    function sendMessage(message) {
+      socketHandler.emit('sendChat', message);
+    }
+
+  });
+
+}());

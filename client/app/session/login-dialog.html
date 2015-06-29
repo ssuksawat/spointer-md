@@ -1,8 +1,12 @@
 <md-dialog aria-label="Start/join a session">
   <form>
     <md-dialog-content layout="column">
-      <md-subheader class="md-primary">Start your story-pointing session</md-subheader>
-      <md-input-container style="padding: 10px 20px 10px 20px;">
+      <div layout="row">
+        <span flex />
+        <md-subheader class="md-primary">Start your story-pointing session</md-subheader>
+        <span flex />
+      </div>
+      <md-input-container required style="padding: 0px 20px 10px 20px;">
         <label>Enter your name <small>(required)</small></label>
         <input type="text" ng-model="name"/>
       </md-input-container>
@@ -21,7 +25,7 @@
               <label>Enter room number</label>
               <input type="text" ng-model="room"/>
             </md-input-container>
-            <md-button class="md-fab md-mini md-primary" ng-disabled="!name && !room" ng-click="join(name, room)">
+            <md-button class="md-fab md-mini md-primary" ng-disabled="!name || !room" ng-click="join(name, room)">
               <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_forward_24px.svg"></md-icon>
             </md-button>
           </div>

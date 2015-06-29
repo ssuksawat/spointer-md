@@ -9,60 +9,55 @@
       <div ng-include="'app/vote-display/vote-display.html'" flex id="voteContainer"></div>
 
       <div layout="row" style="margin-bottom: 5px; margin-left: 10px;">
-        <md-fab-speed-dial direction="up" class="md-fling">
+        <md-fab-speed-dial md-direction="right" class="md-fling ">
           <md-fab-trigger>
-            <md-button class="md-fab" aria-label="Select point...">
+            <md-button class="md-fab md-primary md-hue-2" aria-label="Select point...">
               <md-tooltip>Select Point</md-tooltip>
               <md-icon md-svg-src="./bower_components/material-design-icons/communication/svg/production/ic_dialpad_24px.svg"></md-icon>
             </md-button>
           </md-fab-trigger>
           <md-fab-actions>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="0 point">
               0
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="1 point">
               1
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="2 points">
               2
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="3 points">
               3
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="5 points">
               5
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="8 points">
               8
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="13 points">
               13
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="20 points">
               20
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
+            <md-button class="md-fab md-raised md-mini" aria-label="100 points">
               100
-            </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="Add User">
-              &infin;
             </md-button>
           </md-fab-actions>
         </md-fab-speed-dial>
-        <!--<md-button class="md-fab md-primary" aria-label="Cancel point">-->
-          <!--<md-tooltip>Cancel Point</md-tooltip>-->
-          <!--<md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_undo_24px.svg"></md-icon>-->
-        <!--</md-button>-->
+
         <span flex></span>
-        <md-button class="" aria-label="Clear All" style="margin-right: 20px;">
+
+        <md-button class="md-fab md-primary md-hue-2" aria-label="Clear All" style="margin-right: 20px;">
           <md-tooltip>Clear All</md-tooltip>
-          <md-icon md-svg-src="./bower_components/material-design-icons/content/svg/design/ic_clear_24px.svg"></md-icon>
+          <md-icon md-svg-src="./bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
         </md-button>
       </div>
 
     </md-content>
 
-    <div ng-include="'app/chat/chat.html'"></div>
+    <sp-chat></sp-chat>
 
   </div>
 

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('spointerMdApp').factory('eventHandler', function() {
+  angular.module('spointerMdApp').factory('socketHandler', function() {
 
     var socket;
 
@@ -11,9 +11,8 @@
       disconnect: disconnect,
       isConnected: isConnected,
       addListener: addListener,
-      removeListen: removeListener,
-      createRoom: createRoom,
-      joinRoom: joinRoom
+      removeListener: removeListener,
+      emit: emit
     };
 
     return service;
@@ -42,20 +41,8 @@
       socket.removeListener(event, callback);
     }
 
-    function createRoom(name) {
-      if(!name) {
-        console.error('Name is required in order to create room', name);
-      } else {
-        socket.emit('createRoom', name);
-      }
-    }
-
-    function joinRoom(name, room) {
-      if(!name || !room) {
-        console.error('Both Name and Room Number are required to join a room', name, room);
-      } else {
-        socket.emit('joinRoom', {name: name, room: room});
-      }
+    function emit(event, data) {
+      socket.emit(event, data);
     }
 
   });

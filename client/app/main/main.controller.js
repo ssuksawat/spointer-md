@@ -3,7 +3,7 @@
   'use strict';
 
   angular.module('spointerMdApp')
-    .controller('MainCtrl', function ($mdDialog, Session, eventHandler) {
+    .controller('MainCtrl', function ($route, $mdDialog, Session, socketHandler) {
 
       var vm = this;
 
@@ -15,7 +15,7 @@
       /* ----- PUBLIC ----- */
 
       function start(ev) {
-        eventHandler.connect();
+        socketHandler.connect();
         $mdDialog.show({
           controller: 'SessionCtrl',
           templateUrl: 'app/session/login-dialog.html',
@@ -29,16 +29,17 @@
       }
 
       function exit() {
-        eventHandler.disconnect();
+        socketHandler.disconnect();
         Session.clear();
         delete vm.username;
         delete vm.roomNumber;
+        //$route.reload();
       }
 
       /* ----- PRIVATE ----- */
 
       function init() {
-        //eventHandler.connect();
+        start();
       }
 
     });

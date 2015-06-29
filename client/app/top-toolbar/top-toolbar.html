@@ -5,8 +5,21 @@
 
     <span flex></span>
 
-    <md-button class="md-accent" ng-click="vm.start($event)" ng-if="!vm.username">Start</md-button>
-    <md-button class="md-accent" ng-click="vm.exit()" ng-if="vm.username">Exit</md-button>
+    <div layout="row" ng-show="vm.roomNumber" style="margin-right: 20px">
+      <md-icon md-svg-src="./bower_components/material-design-icons/action/svg/design/ic_room_24px.svg">
+        <md-tooltip>Room</md-tooltip>
+      </md-icon>
+      <h5>#{{vm.roomNumber}}</h5>
+    </div>
+
+    <!--<div layout="row" ng-show="vm.username" style="margin-right: 20px;">-->
+      <!--<md-icon md-svg-src="./bower_components/material-design-icons/social/svg/design/ic_person_24px.svg">-->
+      <!--</md-icon>-->
+      <!--<h5>{{vm.userCount}}</h5>-->
+    <!--</div>-->
+
+    <md-button class="md-accent md-raised" ng-click="vm.start($event)" ng-if="!vm.username">Start</md-button>
+    <md-button class="md-warn md-raised" ng-click="vm.exit()" ng-if="vm.username">Exit</md-button>
 
     <!-- Online status -->
     <!--<md-icon class="glyphicon glyphicon-user"></md-icon>-->
