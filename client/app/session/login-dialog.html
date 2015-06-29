@@ -1,23 +1,23 @@
-<md-dialog aria-label="Start/join a session">
+<md-dialog aria-label="Start/join a session" id="loginDialog">
   <form>
     <md-dialog-content layout="column">
       <div layout="row">
-        <span flex />
+        <span flex></span>
         <md-subheader class="md-primary">Start your story-pointing session</md-subheader>
-        <span flex />
+        <span flex></span>
       </div>
-      <md-input-container required style="padding: 0px 20px 10px 20px;">
+      <md-input-container required id="nameField">
         <label>Enter your name <small>(required)</small></label>
         <input type="text" ng-model="name"/>
       </md-input-container>
 
-      <div layout="column" style="padding: 20px 20px 0px 20px;">
+      <div layout="column" id="createOrJoin">
           <h5>You can <strong>create</strong> a room by pressing the button below...</h5>
-          <span flex />
-          <md-button flex="50" class="md-primary md-raised md-whiteframe-z2" ng-disabled="!name" ng-click="create(name)" style="margin: 20px 0 20px 0;">
+          <span flex></span>
+          <md-button flex="50" class="md-primary md-raised md-whiteframe-z2" ng-disabled="!name" ng-click="create(name)" id="createBtn">
             Create
           </md-button>
-          <span flex />
+          <span flex></span>
         <span flex></span>
           <h5>Or you can <strong>join</strong> an on-going session by entering the room #</h5>
           <div layout="row">

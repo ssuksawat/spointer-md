@@ -33,7 +33,7 @@
         Session.clear();
         delete vm.username;
         delete vm.roomNumber;
-        //$route.reload();
+        $route.reload();
       }
 
       /* ----- PRIVATE ----- */
