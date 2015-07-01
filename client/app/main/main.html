@@ -6,7 +6,7 @@
 
     <md-content flex layout="column" id="content">
 
-      <div ng-include="'app/vote-display/vote-display.html'" flex id="voteContainer"></div>
+      <sp-vote-display flex></sp-vote-display>
 
       <div layout="row" id="bottomToolbar">
         <md-fab-speed-dial md-direction="right" class="md-fling ">
@@ -17,39 +17,42 @@
             </md-button>
           </md-fab-trigger>
           <md-fab-actions>
-            <md-button class="md-fab md-raised md-mini" aria-label="0 point">
+            <md-button class="md-fab md-raised md-mini" aria-label="0 point" ng-click="::vm.vote(0)">
               0
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="1 point">
+            <md-button class="md-fab md-raised md-mini" aria-label="1 point" ng-click="::vm.vote(1)">
               1
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="2 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="2 points" ng-click="::vm.vote(2)">
               2
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="3 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="3 points" ng-click="::vm.vote(3)">
               3
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="5 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="5 points" ng-click="::vm.vote(5)">
               5
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="8 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="8 points" ng-click="::vm.vote(8)">
               8
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="13 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="13 points" ng-click="::vm.vote(13)">
               13
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="20 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="20 points" ng-click="::vm.vote(20)">
               20
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="100 points">
+            <md-button class="md-fab md-raised md-mini" aria-label="100 points" ng-click="::vm.vote(100)">
               100
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="100 points" ng-click="::vm.vote('&infin')">
+              &infin;
             </md-button>
           </md-fab-actions>
         </md-fab-speed-dial>
 
         <span flex></span>
 
-        <md-button class="md-fab md-primary md-hue-2" aria-label="Clear All" id="clearBtn">
+        <md-button class="md-fab md-primary md-hue-2" aria-label="Clear All" id="clearBtn" ng-click="::vm.clear()">
           <md-tooltip>Clear All</md-tooltip>
           <md-icon md-svg-src="./bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
         </md-button>

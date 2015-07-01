@@ -52,14 +52,17 @@ module.exports = function(server) {
 
     client.on('sendChat', function(message) {
       var info = clientList[client.id];
-
       io.to(info.room).emit('chatReceived', {name: info.name, message: message});
     });
 
     client.on('sendVote', function(vote) {
       var info = clientList[client.id];
-
-      client.broadcast.to(info.room).emit('voteReceived', {name: info.name, vote: vote});
+      io.to(info.room).emit('voteReceived', {name: info.name, point: vote});
+    });
+    
+    client.on('clearVotes', function() {
+      var info = clientList[client.id];
+      io.to(info.room).emit('clearVotes');
     });
 
   });

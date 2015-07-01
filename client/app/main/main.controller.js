@@ -3,12 +3,14 @@
   'use strict';
 
   angular.module('spointerMdApp')
-    .controller('MainCtrl', function ($route, $mdDialog, Session, socketHandler) {
+    .controller('MainCtrl', function ($route, $mdDialog, Session, socketHandler, voteService) {
 
       var vm = this;
 
       vm.start = start;
       vm.exit = exit;
+      vm.vote = voteService.send;
+      vm.clear = voteService.clear;
 
       init();
 
