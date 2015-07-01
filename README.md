@@ -1,15 +1,15 @@
 # spointer-md
 
-An Agile story-point session app. 
+An Agile story-pointing (aka Planning Poker) app. 
 
 List of features:
 - [x] create & join a session/room
 - [x] chat within a room
-- [] voting system
-  - [] submit a point, and results will show when everyone voted
-  - [] votes are shown in tiles format
-  - [] randomize "concensus" message
-  - [] result pie chart(?)
+- [ ] voting system
+  - [ ] submit a point, and results will show when everyone voted
+  - [ ] votes are shown in tiles format by default
+  - [ ] randomize "concensus" message (?)
+  - [ ] result pie chart (?)
 
 **Demo:** http://pointis.herokuapp.com/
 
