@@ -1,4 +1,4 @@
-# spointer-md
+# PointIs App [INCOMPLETE]
 
 An Agile story-pointing (aka Planning Poker) app. 
 
