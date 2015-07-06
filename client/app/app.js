@@ -7,6 +7,7 @@
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ngAnimate',
     'ngMaterial'
   ])
     .config(function ($routeProvider, $locationProvider) {

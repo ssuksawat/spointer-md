@@ -5,6 +5,11 @@
   <div layout="row" flex>
 
     <md-content flex layout="column" id="content">
+      
+      <div layout="row" layout-sm="column" layout-align="center end" ng-if="vm.waiting">
+        <h3 class="md-hue-2">Please wait... &nbsp;</h3>
+        <md-progress-circular class="md-accent md-hue-3" md-mode="indeterminate" md-diameter="30"></md-progress-circular>
+      </div>
 
       <sp-vote-display flex></sp-vote-display>
 
@@ -17,35 +22,45 @@
             </md-button>
           </md-fab-trigger>
           <md-fab-actions>
-            <md-button class="md-fab md-raised md-mini" aria-label="0 point" ng-click="::vm.vote(0)">
+            <md-button class="md-fab md-raised md-mini" aria-label="0 point"
+              ng-class="{'md-primary': vm.selected === 0}" ng-disabled="vm.waiting" ng-click="::vm.vote(0)">
               0
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="1 point" ng-click="::vm.vote(1)">
+            <md-button class="md-fab md-raised md-mini" aria-label="100 points"
+              ng-class="{'md-primary': vm.selected === '1/2'}" ng-disabled="vm.waiting" ng-click="::vm.vote('1/2')">
+              1/2
+            </md-button>
+            <md-button class="md-fab md-raised md-mini" aria-label="1 point"
+              ng-class="{'md-primary': vm.selected === 1}" ng-disabled="vm.waiting" ng-click="::vm.vote(1)">
               1
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="2 points" ng-click="::vm.vote(2)">
+            <md-button class="md-fab md-raised md-mini" aria-label="2 points"
+              ng-class="{'md-primary': vm.selected === 2}" ng-disabled="vm.waiting" ng-click="::vm.vote(2)">
               2
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="3 points" ng-click="::vm.vote(3)">
+            <md-button class="md-fab md-raised md-mini" aria-label="3 points"
+              ng-class="{'md-primary': vm.selected === 3}" ng-disabled="vm.waiting" ng-click="::vm.vote(3)">
               3
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="5 points" ng-click="::vm.vote(5)">
+            <md-button class="md-fab md-raised md-mini" aria-label="5 points"
+              ng-class="{'md-primary': vm.selected === 5}" ng-disabled="vm.waiting" ng-click="::vm.vote(5)">
               5
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="8 points" ng-click="::vm.vote(8)">
+            <md-button class="md-fab md-raised md-mini" aria-label="8 points"
+              ng-class="{'md-primary': vm.selected === 8}" ng-disabled="vm.waiting" ng-click="::vm.vote(8)">
               8
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="13 points" ng-click="::vm.vote(13)">
+            <md-button class="md-fab md-raised md-mini" aria-label="13 points"
+              ng-class="{'md-primary': vm.selected === 13}" ng-disabled="vm.waiting" ng-click="::vm.vote(13)">
               13
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="20 points" ng-click="::vm.vote(20)">
+            <md-button class="md-fab md-raised md-mini" aria-label="20 points"
+              ng-class="{'md-primary': vm.selected === 20}" ng-disabled="vm.waiting" ng-click="::vm.vote(20)">
               20
             </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="100 points" ng-click="::vm.vote(100)">
+            <md-button class="md-fab md-raised md-mini" aria-label="100 points"
+              ng-class="{'md-primary': vm.selected === 100}" ng-disabled="vm.waiting" ng-click="::vm.vote(100)">
               100
-            </md-button>
-            <md-button class="md-fab md-raised md-mini" aria-label="100 points" ng-click="::vm.vote('&infin')">
-              &infin;
             </md-button>
           </md-fab-actions>
         </md-fab-speed-dial>
@@ -57,7 +72,7 @@
           <md-icon md-svg-src="./bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
         </md-button>
       </div>
-
+      
     </md-content>
 
     <sp-chat></sp-chat>

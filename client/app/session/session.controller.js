@@ -15,7 +15,7 @@
       function create(name) {
         socketHandler.addListener('roomCreated', function(roomNumber) {
           console.log('room # is: ', roomNumber);
-          $mdToast.show($mdToast.simple().content('Room created! Room number is ' + roomNumber));
+          $mdToast.show($mdToast.simple().content('Room created! Room number is ' + roomNumber).position('top left'));
           Session.user().username = name;
           Session.room().number = roomNumber;
           Session.room().people = [name];
@@ -41,13 +41,16 @@
         //Add session event listener
         socketHandler.addListener('updateRoom', function(data) {
           console.log('update room', data);
-          $mdToast.show($mdToast.simple().content(data.name + ' has joined the room.'));
+          $mdToast.show($mdToast.simple().content(data.name + ' has joined the room.').position('top left'));
 
           Session.room().people = data.room.people;
           console.log(Session.room().people);
         });
+        socketHandler.addListener('userDisconnect', function(data) {
+          $mdToast.show($mdToast.simple().content(data.name + ' has left the room.').position('top left'));
+          Session.room().people = data.room.people;
+        });
       }
-
     });
 
 }());

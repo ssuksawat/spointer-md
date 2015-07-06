@@ -3,14 +3,14 @@
   'use strict';
 
   angular.module('spointerMdApp')
-    .controller('MainCtrl', function ($route, $mdDialog, Session, socketHandler, voteService) {
+    .controller('MainCtrl', function ($scope, $window, $mdDialog, Session, socketHandler, voteService) {
 
       var vm = this;
 
       vm.start = start;
       vm.exit = exit;
-      vm.vote = voteService.send;
-      vm.clear = voteService.clear;
+      vm.vote = vote;
+      vm.clear = clear;
 
       init();
 
@@ -35,13 +35,31 @@
         Session.clear();
         delete vm.username;
         delete vm.roomNumber;
-        $route.reload();
+        $window.location.reload();
+      }
+      
+      function vote(point) {
+        vm.selected = point;
+        voteService.send(point);
+        vm.waiting = true;
+        console.log('selected', vm.selected);
+      }
+      
+      function clear() {
+        vm.selected = undefined;
+        voteService.clear();
+        vm.waiting = false;
       }
 
       /* ----- PRIVATE ----- */
 
       function init() {
         start();
+        
+        $scope.$on('reveal', function() {
+          vm.waiting = false;
+          vm.selected = undefined;
+        });
       }
 
     });

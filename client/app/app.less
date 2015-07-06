@@ -21,6 +21,13 @@ html, body {
   padding: 0px;
 }
 
+.mixin-transition-all(@duration: 0.5s; @timing: linear) {
+  -webkit-transition: all @duration @timing;
+  -moz-transition: all @duration @timing;
+  -o-transition: all @duration @timing;
+  transition: all @duration @timing;
+}
+
 // injector
 @import 'chat/chat.less';
 @import 'main/main.less';
