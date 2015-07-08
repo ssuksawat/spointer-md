@@ -9,6 +9,7 @@ List of features:
   - [x] submit a point, and results will show when everyone in the room casts their vote
   - [x] votes are shown in tiles format by default
   - [ ] result pie chart (?)
+- [ ] mobile view
 
 **Demo:** http://pointis.herokuapp.com/
 
