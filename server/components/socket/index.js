@@ -12,21 +12,21 @@ module.exports = function(server) {
       //set limit to 20 room MAX
       if(roomList.length > 20) {
         client.emit('overcapacity');
+      } else {
+        //get unique 3-digit room number
+        var rand = Math.floor(Math.random() * 900) + 100;
+        while(roomList[rand]) {
+          rand = Math.floor(Math.random() * 900) + 100;
+        }
+  
+        //update roomList and clientList
+        roomList[rand] = {people: [name]};
+        clientList[client.id] = {name: name, room: rand};
+        client.join(rand);
+        client.emit('roomCreated', rand);
+  
+        // console.log('room created: ', rand);
       }
-      
-      //get unique 3-digit room number
-      var rand = Math.floor(Math.random() * 900) + 100;
-      while(roomList[rand]) {
-        rand = Math.floor(Math.random() * 900) + 100;
-      }
-
-      //update roomList and clientList
-      roomList[rand] = {people: [name]};
-      clientList[client.id] = {name: name, room: rand};
-      client.join(rand);
-      client.emit('roomCreated', rand);
-
-      // console.log('room created: ', rand);
     });
 
     client.on('joinRoom', function(info) {
